@@ -9,22 +9,24 @@ var array3 =new Array(1,2,3);
 for (var a in  Array.prototype) {
 	console.log(a);
 };
-
 //length property
-
 console.log(array1.length);
 console.log(array2.length);
-console.log(Object.prototype.toString.call(array3));
-console.log(array3.toString());
-console.log();
-// var undefs =[,,];
-// console.log(undefs[1]);
-// o=[];
-// console.log(o[1]);
-// o[1.1]=true;
-// console.log(o[1.1]);
-// var a1=[ ,];
-// console.log("a1 length:"+a1.length);
+//toString  different
+console.log(Object.prototype.toString.call(array3));//[object array]
+console.log(array3.toString());// 1,2,3
+
+//default undefined  never out of bound of index
+var undefs =[,,];
+console.log(undefs[1]);
+o=[];
+console.log(o[1]);
+// array is object  so also has own property
+o[1.1]=true;
+console.log(o[1.1]);
+//if the element last of the array is undefined  means the array don't contains it
+var a1=[,,];
+console.log("a1 length:"+a1.length);
 
 // //通过length 删除
 // var arr =[];
