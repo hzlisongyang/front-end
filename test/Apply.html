@@ -1,0 +1,15 @@
+<script type="text/javascript">
+function SpecialArray(){                      
+    var values = new Array();
+    values.push.apply(values, arguments);//values 对象调用 push 方法
+    values.toPipedString = function(){
+        return this.join("|");
+    };
+    return values;        
+}          
+var colors = new SpecialArray("red", "blue", "green");
+alert(typeof colors);
+alert(colors.toPipedString()); //"red|blue|green"
+
+
+</script>

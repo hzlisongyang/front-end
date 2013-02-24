@@ -1,0 +1,11 @@
+<script type="text/javascript">
+/**对象上修改了 prototype上面的值 其实在对象上定义了一个同名的属性 覆盖掉了 prototype上面的值  并不是改变了原型链上的值**/
+var o ={r:1,b:{x:1}};
+var c =Object.create(o);
+var d =Object.create(o);
+console.log(c);
+c.r=2;
+c.b={x:2};
+console.log(c);
+console.log(d.b);
+ </script>

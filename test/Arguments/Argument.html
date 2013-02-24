@@ -1,0 +1,30 @@
+<script type="text/javascript">
+var foo = { 
+bar: function() { 
+	console.log(this.baz);
+	console.log(this);
+	return this.baz;
+	 }, 
+baz: 1 
+}; 
+var baz=2;
+// var func=function(){
+// 	return this.baz;
+// }
+(function(){ 
+  //Arguments.prototype.baz=2;
+
+  arguments[0]();
+})(foo.bar,foo.baz); 
+
+// (function(){ 
+  
+//   arguments[0]();
+
+// })(func); 
+
+function func (a,b,c) {
+	// body...
+}
+console.log(func.length);
+</script>

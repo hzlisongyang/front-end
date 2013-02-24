@@ -1,0 +1,35 @@
+<script type="text/javascript">
+	var A =function(){
+		this.x=1;
+		this.arr1=[1,2,3];
+	};
+	A.prototype.x=3;
+	A.prototype.arr=[1,2,3,4,5];
+	A.prototype.add=function(){
+		this.x++;
+	};
+	A.prototype.println=function(){
+		console.log(this.x);
+	};
+	
+	var a =new A();
+	a.println();//输出的是 1  说明caller
+	console.log(a);
+	delete a.x;
+	console.log(a.x);
+	delete a.arr;
+	console.log(a.arr);
+
+
+	var F =function(){
+
+	}
+	F.staticMethod=function(){
+		console.log("ha");
+	}
+	var f =new F();
+	F.staticMethod();
+
+	console.log(Number.MAX_VALUE);
+	
+</script>

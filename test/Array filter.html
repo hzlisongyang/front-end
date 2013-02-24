@@ -1,0 +1,20 @@
+<script type='text/javascript'>
+	var checkNumericRange = function(value) {
+		console.log(this);
+		if (typeof value !== 'number')
+			return false;
+		else 
+			return value >= this.minimum && value <= this.maximum;
+	}
+	 
+	var numbers = [6, 12, "15", 16, "the", -12];
+	 
+	// The obj argument enables use of the this value
+	// within the callback function.
+	var obj = { minimum: 10, maximum: 20 }
+	 
+	var result = numbers.filter(checkNumericRange, obj);
+	 
+	document.write(result);
+	// Output: 12,16
+</script>

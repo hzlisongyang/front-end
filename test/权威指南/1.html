@@ -1,0 +1,28 @@
+<html>
+	<head>
+<script type="text/javascript">
+	for(a in window)
+		//console.log(a);
+	window.onload=function (){
+		 var mySpan = document.getElementById("mySpan");
+		for(i in mySpan)
+			i=="style"?console.log(i):1;
+		//for(j in mySpan.style)
+		//	document.writeln(j);
+		mySpan.style.cssText="dispaly:block;color:red;";
+		mySpan.onclick=function(){this.innerHTML= new Date().toString();};
+	}
+	 	//
+	 //setTimeout(function(){alert("haha")},1000);
+	// setTimeout(alert("haha"),10000);
+	 //window.location="http://www.baidu.com";
+
+	
+</script>
+
+	</head>
+<body>
+	
+<span id="mySpan">11111</span>
+</body>
+</html>

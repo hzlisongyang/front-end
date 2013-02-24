@@ -1,0 +1,51 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<canvas id="myCanvas"  width=847 height=438 style="border:1px solid #c3c3c3;background-image:url('table.jpg');"></canvas>
+<script type="text/javascript">
+	var c =document.getElementById("myCanvas");
+	var cxt =c.getContext("2d");
+	var r=16;
+	var balls=[];
+	function initBall() {
+		var parentBall={
+			position :{x:200,y:200},
+			r:r,
+			color:"#fff"
+		};
+		var firstBall={
+			position:{x:600,y:200},
+			r:r,
+			color:"#fff"
+		};
+		balls.push(parentBall);
+		balls.push(firstBall);
+		for(var j=1;j<5;j++){
+			for(var k=0;k<j+1;k++){
+				var ball ={
+						position:{x:firstBall.position.x+Math.sqrt(3)*r*j,y:firstBall.position.y+2*k*r-j*r },
+						r:r,
+						color:"#fff"
+				};
+				balls.push(ball);
+			}
+		}
+	}
+	function draw(){
+		cxt.fillStyle="#fff"
+		for(i in balls){
+			cxt.beginPath();
+			cxt.arc(balls[i].position.x,balls[i].position.y,balls[i].r,0,Math.PI*2,true);
+			cxt.closePath();
+			cxt.fill();
+		}
+	}
+	initBall();
+	draw();
+</script>
+</body>
+</html>

@@ -1,0 +1,55 @@
+<script type="text/javascript">
+/****/
+var A = function(){
+this.arr = [];
+}
+
+A.prototype.add = function(){
+this.arr.push("testData");
+}
+
+A.prototype.print = function(){
+console.log(this.arr);
+}
+
+var B = function(){}
+B.prototype = new A();
+
+var obj1 = new B();
+obj1.add();
+obj1.print();//Êä³ötestData
+
+var obj2 = new B();
+obj2.add();
+obj2.print();//Êä³ötestData,testData
+
+console.log(obj1);
+console.log(obj2);
+
+
+var A = function(){
+this.value = 1;
+}
+
+A.prototype.add = function(){
+this.value++;
+}
+
+A.prototype.print = function(){
+console.log(this.value);
+}
+
+var B = function(){}
+B.prototype = new A();
+
+var obj1 = new B();
+obj1.add();
+obj1.print();
+
+var obj2 = new B();
+obj2.add();
+obj2.print();
+
+console.log(obj1);
+console.log(obj2);
+ </script>

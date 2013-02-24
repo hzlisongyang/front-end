@@ -1,0 +1,17 @@
+<script type="text/javascript">
+/****/
+var A =function(){
+	this.x=0;
+};
+A.prototype.y=0;
+A.prototype.add=function(){
+	this.x++;
+	this.y++;
+};
+var a =new A();
+A.prototype.add();
+a.add();
+console.log(a);
+console.log(a.y);
+
+ </script>

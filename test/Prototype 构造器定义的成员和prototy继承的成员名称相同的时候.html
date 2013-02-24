@@ -1,0 +1,27 @@
+<script type="text/javascript">
+/*对象查找属性的时候会在自身的成员上查找 之后才会在prototype上逐级往上查找 */
+function F(){
+	this.say=function(){
+		console.log("li");
+	}
+}
+
+F.prototype.say=function(){
+	console.log("songyang");
+}
+F.prototype.talk=function(){
+	console.log("ding");
+}
+
+var f1= new F();
+var f2= new F();
+
+f1.constructor.prototype.talk=function(){
+	console.log("kaihui");
+}
+
+f1.say();
+f2.say();
+f1.talk();
+f2.talk();
+</script>

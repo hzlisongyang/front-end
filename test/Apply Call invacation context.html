@@ -1,0 +1,16 @@
+<script type="text/javascript">
+	var fun=function(){
+		console.log(this);
+		console.log(arguments.length);	
+	}
+	fun.call(1);
+	var o={x:1};
+	fun.bind(o,1,2)();
+	Function.prototype.test=function(){
+		console.log(this);
+	}
+	function f(){
+
+	}
+	f.test();
+</script>

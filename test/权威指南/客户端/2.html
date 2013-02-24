@@ -1,0 +1,27 @@
+<html>
+<head>
+<script type="text/javascript"> 
+	window.onload=function(){
+		var divs=document.getElementsByTagName("div");
+		console.log(divs.length);
+		divs.length=0;
+		console.log(divs.length);
+		document.body.removeChild(divs[1]);
+		for(a in document)
+			console.log(a);
+	}
+</script>
+<style type="text/css">
+
+</style>
+</head>
+
+<body>
+	<div>1</div>
+	<div>2</div>
+	<div>3</div>
+	<div>4</div>
+</body>
+	
+</html>
+

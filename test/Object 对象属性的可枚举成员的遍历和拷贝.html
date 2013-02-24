@@ -1,0 +1,28 @@
+<script type="text/javascript">
+
+
+
+/*把 p 对象中的可枚举 属性 复制到 o对象中*/
+var extend =function (o,p){
+	for(var a in p){
+		o[a]=p[a];
+	}
+	return o;
+}
+/*把p对象中的可枚举属性且o对象没有的    复制到  o对象中 */
+var merge =function(o,p){
+	for(var a in p ){
+		o.hasOwnProperty(a)?true:o[a]=p[a];
+	}
+	return o;
+}
+
+var ob1={x:1,y:3};
+var ob2= {y:2};
+var ob3= {y:2};
+extend(ob2,ob1);
+merge(ob3,ob1);
+console.log(ob2);
+console.log(ob3);
+
+ </script>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>Play Snake Game</title>
+<style type="text/css">
+body {text-align:center;}
+canvas { border:5px dotted #ccc; }
+h1 { font-size:50px; text-align: center; margin: 0; padding-bottom: 25px;}
+</style>
+<script type="text/javascript">
+	function play_game()
+	{
+		var rectWidth=45;
+		var rectHeight=30;
+		var map=[];
+		var c=document.getElementById("playArea");
+		var ctx=c.getContext("2d");
+		var MR=Math.random;
+		
+		for(var i=0;i<rectWidth;i++)
+			map[i]=[];
+		
+		function randFood(){
+			var x,y;
+			do{
+			x=MR()*rectWidth |0;
+			y=MR()*rectHeight|0;
+			console.log(y);				
+			}while(map[x][y]);
+			map[x][y]=1;
+			ctx.strokeRect(x*10,y*10,10,10);
+		}
+		randFood();
+		
+		function randSnake(){						
+			
+		}
+	}
+</script>
+</head>
+<body onload="play_game()">
+<h1>Play Snake Game</h1>
+<div id="msg"></div>
+<canvas id="playArea" width="450" height="300">Sorry your browser does not support HTML5</canvas>
+</body>
+</html>

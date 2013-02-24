@@ -1,0 +1,59 @@
+<!DOCTYPE html >
+<html>
+<head>
+</head>
+<body>
+<canvas id="myCanvas"  width=400 height=400 style="border: 1px  solid #c3c3c3;">
+</canvas>
+<script src="jscex.min.js" type="text/javascript"></script>
+<script type="text/javascript">
+
+	function init(){
+		var c =document.getElementById("myCanvas");
+		var cxt =c.getContext("2d");
+		cxt.strokeStyle="#fff";
+		cxt.translate(70,70);
+	}
+	init();
+	var i=0;
+	function drawEllipse(x,y,w,h){
+		var k=0.5522848;
+		var ox=(w/2)*k;
+		var oy=(h/2)*k;
+		var xe=x+w;
+		var ye=y+h;
+		var xm=x+w/2;
+		var ym= y+h/2;
+		cxt.beginPath();
+		cxt.moveTo(x,ym);
+		cxt.bezierCurveTo(x,ym);
+		cxt.bezierCurveTo(x,ym-oy,xm-ox,xm,y);
+		cxt.bezierCurveTo(xm+ox,y,xe,ym-oy,xe,ym);
+		cxt.bezierCurveTo(xm-ox,ye,x,ym+oy,x,ym);
+		cxt.stroke();
+		cxt.translate(x+70,y+100);
+		px=-70;
+		py=-100;
+		cxt.rotate(10*Math.PI*2/360);
+	}
+	
+	var ct;
+	var drawAsync =eval(Jscex.compile("async",function(ct){
+		while(true){
+			drawEllipse(px,py,140,200);
+			$awaite(Jscex.Async.sleep(200,ct))
+		}
+	}));
+	function start(){
+		ct=new Jscex.Async.CancellationToken();
+		drawAsync(ct).start();
+	}
+	function stop(){
+		ct.cancel();
+	}
+	start();
+	
+	
+</script>
+</body>
+</html>

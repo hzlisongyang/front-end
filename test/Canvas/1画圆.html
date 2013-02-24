@@ -1,0 +1,53 @@
+<!DOCTYPE html >
+<html>
+<head>
+</head>
+<body>
+<canvas id="myCanvas"  width=400 height=200 style="border: 1px  solid #c3c3c3;">
+
+</canvas>
+<script type="text/javascript">
+	var c =document.getElementById("myCanvas");
+	var cxt =c.getContext("2d");
+	cxt.lineWidth=5;
+	cxt.strokeStyle="#163B62";
+    cxt.beginPath();
+	cxt.arc(70,70,40,0,Math.PI*2,false);
+	cxt.stroke();
+	cxt.strokeStyle="#000000";
+	cxt.beginPath();
+	cxt.arc(160,70,40,0,Math.PI*2,false);
+	cxt.stroke();
+	cxt.strokeStyle="#BF0628";
+	cxt.beginPath();
+	cxt.arc(250,70,40,0,Math.PI*2,false);
+	cxt.stroke();
+	cxt.strokeStyle="#EBC41F";
+	cxt.beginPath();
+	cxt.arc(110,110,40,0,Math.PI*2,false);
+	cxt.stroke();
+	cxt.strokeStyle="#198E4A";
+	cxt.beginPath();
+	cxt.arc(200,110,40,0,Math.PI*2,false);
+	cxt.stroke();
+	
+	cxt.strokeStyle="#163B62";
+    cxt.beginPath();
+	cxt.arc(70,70,40,Math.PI*1.9,Math.PI*2.1,false);
+	cxt.stroke();
+	
+	cxt.strokeStyle="#000000";
+	cxt.beginPath();
+	cxt.arc(160,70,40,Math.PI*1.9,Math.PI*2.1,false);
+	cxt.stroke();	
+	cxt.strokeStyle="#000000";
+	cxt.beginPath();
+	cxt.arc(160,70,40,Math.PI*0.56,Math.PI*0.65,false);
+	cxt.stroke();	
+	cxt.strokeStyle="#BF0628";
+	cxt.beginPath();
+	cxt.arc(250,70,40,Math.PI*0.5,Math.PI*0.9,false);
+	cxt.stroke();
+</script>
+</body>
+</html>

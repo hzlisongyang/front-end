@@ -1,0 +1,15 @@
+<script type="text/javascript">
+/*构造器上定义的成员 实例化之后相对于每个实例私有的  而prototype上面的属性 对于每个实例都是共享的*/
+ function F(){
+	this.ob={};
+ }
+ F.prototype.ob2={};
+ var f1 =new F();
+ var f2 =new F();
+
+   console.log(f1.ob==f2.ob);
+  console.log(f1.ob===f2.ob);
+    console.log(f1.ob2==f2.ob2);
+  console.log(f1.ob2===f2.ob2); 
+  
+</script>
