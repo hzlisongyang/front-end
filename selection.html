@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+    <head>
+		<style type='text/css'>
+			.reddy{color:red;}
+		</style>
+		
+		<script type='text/javascript'>
+			var getRectForSelectedText =function(){
+				var selection = document.selection && document.selection.createRange();
+				if (selection) {
+					var rect = selection.getBoundingClientRect();
+					//console.log("left:"+rect.left+",top:"+rect.top+",width:"+rect.width+",height:"+rect.height);
+					return "{{" + rect.left + "," + rect.top + "}, {" + rect.width + "," + rect.height + "}}";
+				};
+			}
+			var MyAppSetHTMLHightLightAt =function(path,attri){
+				var selection = document.selection && document.selection.createRange();
+				if (selection) {
+					var rect = selection.getBoundingClientRect();
+					var selectionContents = selection.text;
+					if (selectionContents) {
+						selection.pasteHTML('<span class="reddy">' + selectionContents + '</span>');
+					};
+				};
+			}
+		</script>
+    </head>
+    <body>
+		<p>Alex AlexAlexAlexAlexAlex AlexAlex Alex Alex</p>
+		<p>Alex AlexAlexAlexAlexAlex AlexAlex Alex Alex</p>
+		<p>Alex AlexAlexAlexAlexAlex AlexAlex Alex Alex</p>
+		<button id="click">Click</button>
+		<div id="conso"></div>
+		<script type="text/javascript">
+			var button = document.getElementById("click");
+			var conso = document.getElementById("conso");
+			button.onclick=function(){
+				var result = getRectForSelectedText();
+				MyAppSetHTMLHightLightAt();
+				
+				conso.innerHTML="Êä³ö×ø±ê£º"+result;
+
+			}
+
+		</script>
+    </body>
+</html>

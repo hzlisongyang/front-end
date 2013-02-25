@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+    <head>
+		<style type='text/css'>
+			.reddy{color:red;}
+		</style>
+		
+		<script type='text/javascript'>
+			var getRectForSelectedText =function(){
+				var selection = document.selection && document.selection.createRange();
+				if (selection) {
+					var rect = selection.getBoundingClientRect();
+					//console.log("left:"+rect.left+",top:"+rect.top+",width:"+rect.width+",height:"+rect.height);
+					return "{{" + rect.left + "," + rect.top + "}, {" + rect.width + "," + rect.height + "}}";
+				};
+			}
+			var MyAppSetHTMLHightLightAt =function(path,attri){
+				var selection = document.selection && document.selection.createRange();
+				if (selection) {
+					var rect = selection.getBoundingClientRect();
+					var selectionContents = selection.text;
+					if (selectionContents) {
+						selection.pasteHTML('<span class="reddy">' + selectionContents + '</span>');
+					};
+				};
+			}
+		</script>
+    </head>
+    <body>
+		<p>Alex AlexAlexAlexAlexAlex AlexAlex Alex Alex</p>
+		<p>Alex AlexAlexAlexAlexAlex AlexAlex Alex Alex</p>
+		<p>Alex AlexAlexAlexAlexAlex AlexAlex Alex Alex</p>
+		<button id="click">Click</button>
+		<div id="conso"></div>
+		<script type="text/javascript">
+			var button = document.getElementById("click");
+			var conso = document.getElementById("conso");
+			button.onclick=function(){
+				var result = getRectForSelectedText();
+				MyAppSetHTMLHightLightAt();
+				
+				conso.innerHTML=result;
+				//var range = window.getSelection().getRangeAt(0);
+				//var selectionContents = range.extractContents();
+				//console.log(range);
+				//console.log(selectionContents);
+				//var rect = range.getBoundingClientRect(); 
+				//alert(rect.left);
+				//var mynode = document.selection.createRange().htmlText;
+				//alert(mynode);
+				/*
+				var range = document.selection.createRange();
+				
+				for (var a in range){
+					console.log(a,"---",range[a]);
+				}
+				
+				var rect = range.getBoundingClientRect();
+				console.log("left:"+rect.left+",top:"+rect.top+",width:"+rect.width+",height:"+rect.height);
+				console.log(range.htmlText);
+				range.htmlText = range.htmlText.replace("/p/",'')
+				console.log(range.htmlText);
+				range.pasteHTML("<span style='color: red'>" + range.htmlText + "</span>");
+				
+
+				//console.log(range.boundingLeft,";"+range.boundingWidth);
+				
+				var rect = range.getBoundingClientRect();				
+				*/
+				/*
+				var selection = document.selection && document.selection.createRange();
+				if (selection) {
+					var rect = selection.getBoundingClientRect();
+					var selectionContents = selection.text;
+					if (selectionContents) {
+						selection.pasteHTML('<span class="reddy">' + selectionContents + '</span>');
+					};
+					//console.log(rect.left);
+					return "{{" + rect.left + "," + rect.top + "}, {" + rect.width + "," + rect.height + "}}";
+				};*/
+			}
+
+		</script>
+    </body>
+</html>
