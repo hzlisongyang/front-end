@@ -38,20 +38,21 @@ var arr5 =new Array(3);
 console.log(0 in arr4);//why chrome also return false 
 console.log(0 in arr5);
 
-//push  when define literal array  v8 use push method
+//push  
 Array.prototype.push=function(){
 	var n = this.length,m = arguments.length;
 	for(var i=0;i<m;i++){
 		this[n+i]=arguments[i];
 	}
 	this.length=m+n;
+	console.log("---");
 	return this.length;
 }
  var arr6 =[1,2,3,4,5];
- arr6.push(3);
+ // arr6.push(3);
  console.log(arr6);
 
-
+//pop
 Array.prototype.pop=function(){
 	var len=this.length,value = this[len-1];
 	this.length=len-1;
@@ -60,8 +61,45 @@ Array.prototype.pop=function(){
 }
 var value = arr6.pop();
 console.log(value,arr6);
+//pop like other method is intention
+var str = "abcdefg";
+console.log(Array.prototype.pop.apply(str));
+console.log(str);
+
+var a =2;
+alert(a/=2);
+
+var a11=b11+1,b11=2;
+alert(a11);
+console.log("\n");
+
+!function(){
+	console.log(Object.prototype.toString.apply(arguments));
+}(1,2,4);
+//concat
+// O = [[1],2,[[3]]];
+// 
+//
+
+// var a=new Array();
+// var b=[];
 
 // console.log(arr.concat([1],2,[[3]]));
+
+
+
+// window.MyNamespace = {
+//     something:new Array(
+//         new Array("t","h","i","s"), 
+//         "that", 
+//         "the other"
+//     ),
+//     another:function(){
+//         return MyNamespace.something[0].join('');
+//     }
+// };
+ 
+// console.log(MyNamespace.another());
 
 // var arr1 =[1,2,3,,,,,,,,,,,,,,,,,,4,5,6,7,8,9];
 
