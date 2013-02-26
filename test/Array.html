@@ -1,5 +1,5 @@
 <script type="text/javascript">
-//create 
+//three method create array
 var empy =[];
 var array1 = [2,3,5,7,11];//literal
 var array2 =new Array(10);//on argument means length
@@ -35,16 +35,32 @@ console.log(arr.length=2,arr);
 //literal undefined dosen't like  array has no element
 var arr4 =[,,,];
 var arr5 =new Array(3);
-console.log(0 in arr4);//为什么chrome是false 呢
+console.log(0 in arr4);//why chrome also return false 
 console.log(0 in arr5);
 
-//push
+//push  when define literal array  v8 use push method
 Array.prototype.push=function(){
-	return this;
+	var n = this.length,m = arguments.length;
+	for(var i=0;i<m;i++){
+		this[n+i]=arguments[i];
+	}
+	this.length=m+n;
+	return this.length;
 }
  var arr6 =[1,2,3,4,5];
-arr6.push(3);
-console.log(arr6);
+ arr6.push(3);
+ console.log(arr6);
+
+
+Array.prototype.pop=function(){
+	var len=this.length,value = this[len-1];
+	this.length=len-1;
+	delete this[length];
+	return value;
+}
+var value = arr6.pop();
+console.log(value,arr6);
+
 // console.log(arr.concat([1],2,[[3]]));
 
 // var arr1 =[1,2,3,,,,,,,,,,,,,,,,,,4,5,6,7,8,9];
