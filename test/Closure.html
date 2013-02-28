@@ -1,0 +1,83 @@
+<body>
+	<div style="width:200;background:red;">0</div>
+	<div style="width:200;background:red;">1</div>
+	<div style="width:200;background:red;">2</div>
+	<div style="width:200;background:red;">3</div>
+	<div style="width:200;background:red;">4</div>
+<script type="text/javascript">
+
+var arr1=[];
+function foo() {
+	  var tmp = 3;  
+	  for(var i=0;i<5;i++)
+	  {  	
+	  		arr1[i]=eval(i);
+	  }
+  }
+foo();
+// arr1[0]();
+// arr1[1]();
+//普通函数的情况下 Global Closure? Local 
+
+//七种方式处理 闭包影响
+	(function(){
+		var a = document.getElementsByTagName("div");
+
+		for(var i =0;i<a.length;i++){
+
+//1
+			// a[i].i=i;
+			// a[i].onclick=function(){
+			// 	alert(i); // i 还是根据exacution contentext 
+			// 	console.log(this.i);
+			// }
+
+//2
+		// ~function(i){
+		// 	// 其实是定义了一个i变量 把var i = i;
+		// 	a[i].onclick=function(){
+		// 		alert(i);
+		// 		console.log(this.i);
+		// 	}
+		// }(i);
+
+
+// //3
+// 		(a[i].onclick=function(){
+// 			alert(arguments.callee.i);
+// 		}).i=i;
+// 		// 也可以写成这样的 a[i].onclick.i=i;
+
+//4
+		// !function(){
+		// 	var temp =i;
+		// 	a[i].onclick=function(){
+		// 		alert(temp);
+		// 		console.log(temp);
+		// 	};
+		// }();
+
+//5
+			// a[i].onclick=function(arg){
+			// 	console.log(i);
+			// 	return function(){
+			// 		alert(arg);
+			// 	};
+			// }(i);
+
+//6
+			// a[i].onclick=new Function("alert("+i+")");
+			
+			
+			
+//7
+			// a[i].onclick=Function("alert("+i+")");			
+//			(function() {	alert(2)	});	
+			
+			// a[i].onclick.i=0;
+		}
+	})();
+
+
+</script>
+</body>

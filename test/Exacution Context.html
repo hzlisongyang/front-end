@@ -1,8 +1,44 @@
 <script type="text/javascript">
-	(function(){
-		var i=1+j,j=5;
-		console.log(i);
-	
-	})();
+// 执行上下文调用
+(function foo(bar){
+	if (bar){
+	    return;
+	}
+	foo(true);
+})();
 
+//eval 中加括号
+function callback(str){ 
+	var json = eval('(' + str + ')'); 
+} 
+
+	var geval =eval;  //>>>> window.geval=eval 
+	eval("var x = 10");
+	(function foo(){
+	    eval(" var y = 20");//eval 在local作用域中定义的
+	    window.eval(" var m =30 "); //>>> 30 
+	    geval("var n =40;");
+	})();
+	console.log(x); // 10
+	console.log(n);
+	console.log(m);
+	// console.log(y); // ”y” is not defined
+var o={	x:1};
+eval.apply(o,["x =10"]);
+console.log(o.x);
+
+
+
+var x = 10;
+ 
+function foo() {
+ 
+  var x = 20;
+  var y = 30;
+ 
+  var bar = new Function('alert(x); alert(y);');
+ 
+  bar(); // 10, "y" is not defined
+ 
+}
 </script>

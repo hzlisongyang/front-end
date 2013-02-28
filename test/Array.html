@@ -4,7 +4,13 @@ var empy =[];
 var array1 = [2,3,5,7,11];//literal
 var array2 =new Array(10);//on argument means length
 var array3 =new Array(1,2,3);
-
+var array4 =Array(5);
+var array5 =[,,,,,,];
+// 字面量和构造器构造的有什么区别
+console.log(typeof array4[2]);
+console.log(typeof array5[2]);
+console.log(array4.toString());
+console.log(array5.toString());
 //traverse the hasOwnProperty  
 for (var a in  Array.prototype) {
 	console.log(a);
@@ -66,47 +72,21 @@ var str = "abcdefg";
 console.log(Array.prototype.pop.apply(str));
 console.log(str);
 
-var a =2;
-alert(a/=2);
 
-var a11=b11+1,b11=2;
-alert(a11);
-console.log("\n");
 
-!function(){
-	console.log(Object.prototype.toString.apply(arguments));
-}(1,2,4);
 //concat
-// O = [[1],2,[[3]]];
-// 
-//
+// O = [[1],2,[[3]]];  Call  [[Get]] innerMethod
+console.log(arr.concat([1],2,[[3]]));
 
-// var a=new Array();
-// var b=[];
+var array6=[0];
+array6[1000]=1;
+console.log("flag");
+array6.forEach(function(x,i){console.log(i+"."+x)});
+var array7=new Array(1000);
+array7.forEach(function(x,i){console.log(i+"."+x)});
 
-// console.log(arr.concat([1],2,[[3]]));
-
-
-
-// window.MyNamespace = {
-//     something:new Array(
-//         new Array("t","h","i","s"), 
-//         "that", 
-//         "the other"
-//     ),
-//     another:function(){
-//         return MyNamespace.something[0].join('');
-//     }
-// };
- 
-// console.log(MyNamespace.another());
-
-// var arr1 =[1,2,3,,,,,,,,,,,,,,,,,,4,5,6,7,8,9];
-
-// console.log(arr1.pop());
-// console.log(arr1);
-
-
+var array8 = Array(Array(1000));
+array8.forEach(function(x,i){console.log(i+"."+x)});
 // var arr2 =[1,2,3,4,5,6,7,8,9];
 
 // var temp = arr2.slice(-100);
@@ -141,8 +121,6 @@ console.log("\n");
 // 	console.log(x+' '+y+' '+z+' '+j);
 // },10  );
 
-
-// console.log(8>>>2);
 
 // var a=1,b=0;
 // console.log(a+(++++a));
