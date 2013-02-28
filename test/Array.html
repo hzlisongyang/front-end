@@ -44,7 +44,7 @@ var arr5 =new Array(3);
 console.log(0 in arr4);//why chrome also return false 
 console.log(0 in arr5);
 
-//push  
+//push 插入到数组尾部并返回索引
 Array.prototype.push=function(){
 	var n = this.length,m = arguments.length;
 	for(var i=0;i<m;i++){
@@ -57,7 +57,7 @@ Array.prototype.push=function(){
  // arr6.push(3);
  console.log(arr6);
 
-//pop
+//pop 删除数组尾部的值并返回
 Array.prototype.pop=function(){
 	var len=this.length,value = this[len-1];
 	this.length=len-1;
@@ -71,9 +71,21 @@ var str = "abcdefg";
 console.log(Array.prototype.pop.apply(str));
 console.log(str);
 
+//shift 删除数组首的值返回undefined
+Array.prototype.shift=function(){
+	return this.splice(0,1)[0];
+}
+console.log(arr6.shift(),arr6);
 
+//unshift 插入数组首的值返回 新的length
+Array.prototype.unshift=function(){
+	var len = this.length,args=Array.prototype.slice.apply(arguments);
+	this.splice.apply(this,[0,0].concat(args));
+	return len+args.length;
+}
+console.log(arr6.unshift(22,11),arr6);
 
-//concat
+//concat 合并数组 去掉一层数组合并 
 // O = [[1],2,[[3]]];  Call  [[Get]] innerMethod
 console.log(arr.concat([1],2,[[3]]));
 
@@ -128,4 +140,10 @@ console.log(temp);
 
 // var a=1,b=0;
 // console.log(a+(++++a));
+var ee =1;
+var o={
+	ee:2
+}
+eval.apply(o,['alert(ee);console.log(this)']);
+//hoisting 函数相同的时候等
  </script> 
