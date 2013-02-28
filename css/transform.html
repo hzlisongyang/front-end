@@ -1,0 +1,27 @@
+<html>
+<head>
+	<style type="text/css">
+		#mydiv{
+			/*-webkit-transition-duration:5s;*/
+		}
+
+	</style>
+</head>
+<body>
+	<div id="mydiv" style="width:200px;height:60px;background:lightblue;">
+		mydiv
+	</div>
+	<script type="text/javascript">
+		var mydiv =document.getElementById("mydiv");
+		var delay =500;
+		setTimeout(function(){
+						
+			mydiv.style.webkitTransform="translateX(1000px)";
+			mydiv.style.webkitTransitionDuration="1000ms";
+			console.log(mydiv.style);
+		},delay);
+
+	</script>
+</body>
+
+</html>
