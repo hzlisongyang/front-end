@@ -1,0 +1,29 @@
+<script type="text/javascript">
+/**
+ * eval 和 window.eval 的区别
+ * 执行上下文 指的是调用的this  作用域指的是引用到的
+ * eval的原理是什么？
+ * 
+ *
+ * 
+ */
+	function test1(){
+		var str1 ="var a = 2;console.log(this);(function(){var value11 =9;})()";
+		eval(str1);
+
+		var str2 ="var b = 3;";
+		window.eval(str2);
+
+		var str3 ="var c =4 ;";
+		eval.call(window,str3);// window 对象调用
+
+		//如果指定的不是内置对象 会指向 window对象
+		var str4 ="var d =this.i;console.log(d);console.log(this);";
+		var o={i:1};
+		eval.call(o,str4);
+	};
+	test1();
+	console.log(typeof a);//undefined
+	console.log(typeof b,b);//3
+	console.log(typeof c,c);//4
+</script>
