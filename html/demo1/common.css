@@ -1,4 +1,5 @@
 html,body,ul,p,h1,form {margin: 0;padding:0;font-family:arial;}
+img{border:none;}
 a {text-decoration:none;}
 a:hover{text-decoration:underline;}
 li {list-style:none;}
@@ -13,19 +14,32 @@ body{background: url(images/body_bg.png) repeat-x;}
 
 	.top_bar{float:left;color:white;font-weight:bold;}
 	.top_bar li{float:left;}
-	.top_bar .phone{background: url(images/top_bg.gif) no-repeat left -13px;margin-left:107px;padding-left: 28px; }
-	.top_bar .help {background: url(images/top_bg.gif) no-repeat left -43px;margin-left:38px;padding-left:38px; }
-	.top_bar .flag {margin-left: 20px;}
-	.top_bar .flag a{margin-left:9px;}
+	.top_bar .phone{margin-left:107px;padding-left: 28px;background: url(images/top_bg.gif) no-repeat left -13px;}
+	.top_bar .help {margin-left:38px;padding-left:38px;background: url(images/top_bg.gif) no-repeat left -43px;}
+	.top_bar .flag {margin-left: 22px;height: 29px;padding-top: 1px;}
+	.top_bar .flag a{margin-left:8px;}
 
 #header {position:relative;width: 960px;height:100px;margin:0 auto;background: url(images/header_bg.png) no-repeat center 0;}
-	.bag{position:absolute;width: 300px;height:100px;background: url(images/ico.png) no-repeat 0 7px;padding-left:84px; }
+	.bag{position:absolute;width: 300px;height:100px;padding-left:84px ; background: url(images/ico.png) no-repeat 0 7px;}
 	.bag p{position:relative;color:#F7F7F7;font-size:20px;left:1px;top: 28px;font-weight:bold;}
 	.bag a{position:relative;width:114px;height:23px;line-height:22px;left:20px;top:38px;display:block;
-		text-align:center;background: url(images/ico.png) no-repeat 0 -93px;color:#FFC200;font-weight: bold;}
-#header h1{margin:0 auto;width: 238px;}
-	.search {position:absolute;right: 0px;top:30px;width:;height:31px;width:292px;background:url(images/ico.png) no-repeat 0 -116px;}
-	.search input{outline: none;border: none;}
-	.search .btn{width: 34px;height: 20px;}
-	.search .text{width:100px;height: 22px;margin-top: 4px;margin-left: 8px;width: 236px;background: transparent;}
+		text-align:center;color:#FFC200;font-weight: bold;background: url(images/ico.png) no-repeat 0 -93px;}
+	.bag a:hover{text-decoration: none;color:#FF9;cursor:pointer;}
+#header h1 {margin:0 auto;width: 238px;}
+	.search {position:absolute;right: 0px;top:33px;height:33px;width:292px;background:url(images/ico.png) no-repeat 0 -116px;}
+	.search input {outline: none;border: none;background:transparent;}
+	.search .text {width: 236px;height: 22px;margin: 3px 0 0 19px;font-weight: bold;color:#666;}
+	.search .btn {width: 37px;height: 27px;padding:6px;}
+#nav {height:43px;margin: 0 auto;width: 960px;line-height: 40px;padding-left: 18px}
+#nav li{float:left;}
+#nav a,#nav strong,#nav span { float:left;/*display: inline-block;*/ height:29px; line-height:28px;}
+#nav li a{color:white;/*padding: 0 8px 0 18px;*/margin: 7px 1px 0;}
+#nav li a:hover{text-decoration:none;background: url(images/nav_bg.png) repeat-x 0 -29px;}
+#nav span {padding:0 16px;}
+#nav li a:hover span{background: url(images/nav_bg.png) no-repeat right -58px;}
+#nav li a strong{font-weight: normal;font-size: 15px;}
+#nav li a:hover strong{background: url(images/nav_bg.png) no-repeat 0 0;}
+#nav .active a {text-decoration:none;background: url(images/nav_bg.png) repeat-x 0 -29px;}
+#nav .active a span{background: url(images/nav_bg.png) no-repeat right -58px;}
+#nav .active a strong{background: url(images/nav_bg.png) no-repeat 0 0;}
 #footer { height:702px; background:url(images/footer_bg.png) repeat-x; }
