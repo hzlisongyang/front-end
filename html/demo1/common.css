@@ -77,12 +77,12 @@ body{background: url(images/body_bg.png) repeat-x;}
 		  		 .module_search li.space3{height: 40px;padding-top: 8px;line-height: 15px;background: url(images/ico.png) no-repeat 16px -268px;}
 		  		 .module_search li.space4{height: 42px;padding-top: 8px;line-height: 15px;background: url(images/ico.png) no-repeat 16px -317px;}
 		  		 .alertpay a{display: block;text-align: center;margin-bottom: 10px;}
-	#main .master{height:700px;width: 706px;float:left;}
-		  .master .module_menu{}
-		  .master .module_menu 
-		  .module_search{}
-		  .alertpay{}
-
+	#main .master{height:700px;width: 706px;float:left;margin-left: 24px;}
+		  .sort ,.sort h2{font-size:12px;line-height: 19px;}
+		  .sort dt{float:left;font-weight:bold;color:#747474;padding-right: 2px;}
+		  .sort dd{float:left;position:relative;margin-right: 8px;}
+		  .sort dd h2{color:#747474;line-height: 17px;text-indent:5px;height: 17px;width:92px;margin: 0 21px 0 0;font-weight: normal;border-bottom:1px solid #ccc;border-top:1px solid #ccc;border-left:1px solid #ccc;}
+		  .sort a{position: absolute;background: black;width: 19px;height: 19px;top: 0px;right:4px;background: url(images/ico.png) no-repeat 0 -381px;}
 
 
 
