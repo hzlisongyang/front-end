@@ -76,7 +76,7 @@ body{background: url(images/body_bg.png) repeat-x;}
 		  		 .module_search li.space2{height: 40px;padding-top: 8px;line-height: 15px;background: url(images/ico.png) no-repeat 16px -219px;}
 		  		 .module_search li.space3{height: 40px;padding-top: 8px;line-height: 15px;background: url(images/ico.png) no-repeat 16px -268px;}
 		  		 .module_search li.space4{height: 42px;padding-top: 8px;line-height: 15px;background: url(images/ico.png) no-repeat 16px -317px;}
-		  		 .alertpay a{display: block;width: 211px;text-align: center;margin-bottom: 10px;}
+		  		 .alertpay a{display: block;text-align: center;margin-bottom: 10px;}
 	#main .master{height:700px;width: 706px;float:left;}
 		  .master .module_menu{}
 		  .master .module_menu 
