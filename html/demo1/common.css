@@ -87,8 +87,11 @@ body{background: url(images/body_bg.png) repeat-x;}
 		  .sort p strong {color:#999;}
 		  .sort p span {color:#b20e00;}
 
-
-
+		  .product_list ul {width: 734px;padding-top: 10px;}
+		  .product_list > h2{clear:both;font-size: 18px;color: #666;line-height: 30px;padding-top:21px;}
+		  .product_list a {color: #666;text-decoration:none;}
+		  .product_list h3 {font-size: 15px;}
+		  .product_list li{float:left;width: 183px;}
 
 
 
