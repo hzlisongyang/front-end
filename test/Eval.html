@@ -3,10 +3,12 @@
  * eval 和 window.eval 的区别
  * 执行上下文 指的是调用的this  作用域指的是引用到的
  * eval的原理是什么？
- * 
- *
+ * eval 如果传入 非字符串 将返回该传入值
+ * eval赋给一个参数 相当于调用了window.eval
+ * eval不属于任何函数  只有内置函数才能通过call调用eval
  * 
  */
+
 	function test1(){
 		var str1 ="var a = 2;console.log(this);(function(){var value11 =9;})()";
 		eval(str1);
@@ -21,9 +23,20 @@
 		var str4 ="var d =this.i;console.log(d);console.log(this);";
 		var o={i:1};
 		eval.call(o,str4);
+
+		var tempEval=eval;
+		var str5="var e=3;";
+		tempEval(str5);
 	};
 	test1();
 	console.log(typeof a);//undefined
 	console.log(typeof b,b);//3
 	console.log(typeof c,c);//4
+	console.log(typeof e,e,"-e");
+// eval 如果传入 非字符串 将返回该传入值  
+	var temp=eval(new String("2+2"));
+	eval("2+2");
+	//eval 可以计算表达式 和执行语句
+	eval("function b(){alert('李');}");
+	b();	
 </script>
