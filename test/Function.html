@@ -1,6 +1,11 @@
 <script type="text/javascript">
 	/**
 	 * Fucntion(parameter0,parameter1.....,functionBody);
+	 * 
+	 * 之所以Function.prototype 和Function implicite associate 因为Function 本身就继承了Function.prototype
+	 *
+	 *
+	 * 当为构造函数的时候 忽略return
 	 *
 	 * 
 	 */
@@ -11,4 +16,16 @@
 	Function.prototype.a=1;
 	console.log(Function.a);
 
+	function fun (a,b,c){
+		console.log(fun.length);
+	}
+	fun(1,2,4);
+
+//当为构造函数的时return 非对象的  会忽略return
+	function A(){
+		this.age=1;
+		return 1;
+	}
+	var a =new A();
+	console.log(a);
 </script>
