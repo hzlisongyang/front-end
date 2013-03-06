@@ -1,4 +1,4 @@
-html,body,ul,dl,dd,p,h1,h2,form {margin: 0;padding:0;font-family:arial;}
+html,body,ul,dl,dd,p,h1,h2,h3,form {margin: 0;padding:0;font-family:arial;}
 img{border:none;}
 a {text-decoration:none;}
 a:hover{text-decoration:underline;}
@@ -88,15 +88,20 @@ body{background: url(images/body_bg.png) repeat-x;}
 		  .sort p span {color:#b20e00;}
 
 		  .product_list ul {width: 734px;padding-top: 10px;}
+		  .product_list li{float:left;width: 183px;margin-bottom: 30px;}
 		  .product_list > h2{clear:both;font-size: 18px;color: #666;line-height: 30px;padding-top:21px;}
+		  .product_list div {margin-bottom: 6px;}
+		  .product_list li div a {border:1px solid #c6c6c6;display: block;width:154px;height: 114px;}
 		  .product_list a {color: #666;text-decoration:none;}
 		  .product_list h3 {font-size: 15px;}
-		  .product_list li{float:left;width: 183px;}
+		  .product_list p{font-size:13px;color:#333;}
+		  .product_list p span{color: #b20e00;}
 
-
-
-
-
+.page {text-align:center;}
+.page a {color:#B20E00;display:inline-block;height: 20px;font-size: 12px;line-height:20px;padding:0 10px;}
+.page  span{font-family:宋体;}
+.page a:hover ,.page a:active {background:#e7b2ad;}
+.page .active,.page .active:hover { background:#b20e00; color:#fff; }
 
 
 
