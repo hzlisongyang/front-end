@@ -1,0 +1,23 @@
+<script type="text/javascript">
+/**
+ * http://sporto.github.com/blog/2013/02/22/a-plain-english-guide-to-javascript-prototypes/
+ * 
+ * 
+ *1 每个在JavaScript中的对象都prototype 当得到一个消息JavaScript会试图寻找在对象中寻找属性 如果没有找到它会发送给它的原型 
+ *
+ * prototype 和 __proto__ 的区别：prototype是伴随构造产生的 o2.constructor.prototype 和 对象直接赋予属性__proto__一个对象表示该对象继承自另一个对象
+ */
+
+ var o1={name:"li"}
+ var o2={}
+ o2.__proto__=o1;//o2.__proto__ >>> Object {name: "li"}
+
+var person = {
+  kind: 'person'
+}
+
+var zack1 = Object.create(person);
+//当改变prototype继承下来的属性时
+var zack2 = Object.create(person, {age: {value:  13} });
+
+</script>
