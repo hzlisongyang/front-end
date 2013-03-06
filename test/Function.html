@@ -7,7 +7,7 @@
 	 *
 	 * 当为构造函数的时候 忽略return
 	 *
-	 * 
+	 * 2 new Function 或者 Function 里定义的申明的函数或者是变量
 	 */
 	
 //1
@@ -33,4 +33,5 @@
 	}
 	var a =new A();
 	console.log(a);
+	new Function("var nestA=2;");
 </script>

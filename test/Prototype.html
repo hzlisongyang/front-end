@@ -20,4 +20,19 @@ var zack1 = Object.create(person);
 //当改变prototype继承下来的属性时
 var zack2 = Object.create(person, {age: {value:  13} });
 
+
+
+// foo: Foo
+// ->kind: "foo"
+// ->__proto__: Foo
+// --->constructor: function Foo() {
+// --->__proto__: Object
+
+function Foo() {
+  this.kind = "foo";
+}
+
+var foo = new Foo(); 
+foo.kind //=> ‘foo’
+
 </script>
