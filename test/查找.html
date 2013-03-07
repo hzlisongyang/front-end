@@ -32,19 +32,33 @@ var arr2= [1,2,3,4,5,6,17,28,49];
 //
 
 
-function binaryFind(value,arr){
-	var left=0,right=arr.length,center;
+// function binaryFind(value,arr){
+// 	var left=0,right=arr.length,center;
+// 	while(left<=right){
+// 		center = Math.floor((left+right)/2);
+// 		if(value == arr[center]) return center;
+// 		if(value > arr[center]){
+// 			left = center+1;
+// 		}else{
+// 			right= center-1;
+// 		}
+// 	}
+// }
+
+
+
+function  binaryFind(value,arr){
+	var left=0,right=arr.length,mid;
 	while(left<=right){
-		center = Math.floor((left+right)/2);
-		if(value == arr[center]) return center;
-		if(value > arr[center]){
-			left = center+1;
+		mid = Math.floor((left+right)/2);
+		if(value == arr[mid]) return mid;
+		if(value > arr[mid]){
+			left=1+mid;
 		}else{
-			right= center-1;
+			right=mid-1;
 		}
 	}
 }
-
 
 
 </script>
