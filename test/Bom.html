@@ -1,0 +1,47 @@
+
+<html>
+<body>
+<script type="text/javascript">
+/**
+ * 1 三种方式获取 window 获取 窗口高度、宽度 
+ *
+ * 
+ */
+
+//1
+
+// innerH =window.innerHeight;
+// innerW =window.innerWidth;
+   
+
+// var clientH=document.documentElement.clientHeight;
+// var clientW=document.documentElement.clientWidth;
+
+// var bodyWidth =document.body.clientWidth;
+// var bodyHeight=document.body.cilentHeight;
+
+
+// window.document.body.onclick=function  (e) {
+// 	console.log(e,"haha");
+// 	e.preventDefault();
+// 	// e.defaultPrevent();
+// 	console.log(e);
+// }
+document.onclick=function  (e) {
+	e.preventDefault();
+	con = window.confirm("您确定要删除么?"); 
+	if(con) { window.location.href="http://www.baidu.com"; } 
+}
+
+
+  // var pro=window.prompt("text","defaultText");
+  // var con=window.confirm("是否正确");
+  // var con=window.alert("hahaha");
+  // setTimeout(function(){
+  // 	  window.moveBy(100,20);
+  // 	},1000);
+//
+</script>
+
+</body>
+</html>
