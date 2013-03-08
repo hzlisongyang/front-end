@@ -4,9 +4,35 @@
  *
  * 
  */
+//Straight Selection Sort
+
 
 function selectSort(arr){
-	
+	for(var i=0;i<arr.length;i++){
+		for(var j=0;i<arr.length;j++){
+
+		}
+	}
 }
+
+
+ function InsertSort(arr) { //插入排序->直接插入法排序
+  var st = new Date();
+  var temp, j;
+  for(var i=1; i<arr.length; i++) {
+   if((arr[i]) < (arr[i-1])) {
+	    temp = arr[i];
+	    j = i-1;
+    do {
+	     arr[j+1] = arr[j];
+	     j--;
+    }
+    while (j>-1 && (temp) < (arr[j]));
+    arr[j+1] = temp;
+   }//endif
+  }
+  status = (new Date() - st) + ' ms';
+  return arr;
+ }
 
 </script>
