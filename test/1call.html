@@ -1,30 +1,44 @@
-<!DOCTYPE >
+<!DOCTYPE html>
 <html>
+<head>
+	<meta charset="utf-8">
+</head>
 <body>
 <input type="text" id="myText"   value="input text">
 <script type="text/javascript">
-
-/*
+/**
+ *1 call 璋冪敤 null undefined 绛変负window瀵硅薄
+ *
+ * 2
+ *
  * 
- call 方法
- 调用一个对象的一个方法，以另一个对象替换当前对象。
- 
- 参数
- thisObj
- 可选项。将被用作当前对象的对象。
  */
- 
-function Obj(){this.value="对象！";}
-var value="global 变量";
 
-function fun1(){alert(this.value);}
-function fun2(){alert(this);}
-window.fun1();   //global 变量
-fun1.call(window);  //global 变量
+ 
+// function Obj(){this.value="local";}
+
+
+var value="global ";
+
+function showValue(){
+	console.log(this.value);
+}
+
+showValue.call(window);//global
+showValue.call();// global
+showValue.call(null);
+showValue.call(undefined);// 闈炰弗鏍兼ā寮忎笅  null鍜岀┖閮芥槸
+
+
 var temp =document.getElementById("myText");
-fun1.call(temp);  //input text
-fun1.call(new Obj());   //对象！
-fun2.call(Number(1)); 
+showValue.call(temp);  //input text
+
+
+
+// function fun2(){alert(this);}
+
+// fun1.call(new Obj());   //露脭脧贸拢隆
+// fun2.call(Number(1)); 
 </script>
 </body>
 </html>
