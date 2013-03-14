@@ -1,3 +1,3 @@
-(function(){
-	console.log('gg');
-})()
+define("li",function(){
+	
+});
