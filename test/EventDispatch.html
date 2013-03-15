@@ -1,0 +1,30 @@
+<!doctype html>
+<html>
+<head>
+
+</head>
+<body>
+<input  type="checkbox" id="checkbox" >
+
+<script type="text/javascript">
+	var evt =document.createEvent("MouseEvents");
+
+	evt.initMouseEvent("click", true, true, window,0, 0, 0, 0, 0, false, false, false, false, 0, null);
+	var checkBox = document.querySelector("#checkbox");
+	// var evt = document.createEvent("Event");
+	// evt.initEvent("build",true,true);//eventType,canBubble,cancelable
+	// document.body.dispatchEvent(evt);
+	document.addEventListener('build',function(){alert("haha");},true);
+	// document.body.onclick=function(){
+	// 	checkbox.dispatchEvent(evt);
+	// 	console.log(checkbox.dispatchEvent(evt));
+	// }
+	function foo(){
+		checkbox.dispatchEvent(evt);
+		console.log(checkbox.dispatchEvent(evt));
+	}
+</script>
+<input type="button" onclick="foo">
+</body>
+
+</html>
