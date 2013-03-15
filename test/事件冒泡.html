@@ -17,14 +17,24 @@
 		if(ele.addEventListener){
 			ele.addEventListener(eventName,callback,false);
 		}else{
-			ele.attachEvent("on"+eventName);
+			ele.attachEvent("on"+eventName,callback);
+		}
+	}
+
+	var removeEvent = function(ele,eventName,callback){
+		if(ele.addEventListener){
+			ele.removeEventListener(eventName,callback);
+		}else{
+			ele.detachEvent("on"+eventName,callback);
 		}
 	}
 	var outer = document.getElementById("outer");
 	var inner = document.getElementById("inner");
-
-	addEvent(outer,"click",function(){alert("outer");});
-
+	var foo =function(){
+		alert("ha");
+	}
+	addEvent(outer,"click",foo);
+	removeEvent(outer,"click",foo);
 	// out.onclick=function(e){
 	// 	alert("outer");
 	// }
