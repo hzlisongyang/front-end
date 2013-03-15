@@ -11,23 +11,19 @@
 </div>
 
 <script type="text/javascript">
+
+	var addEvent = function(ele,eventName,callback){
+
+		if(ele.addEventListener){
+			ele.addEventListener(eventName,callback,false);
+		}else{
+			ele.attachEvent("on"+eventName);
+		}
+	}
 	var outer = document.getElementById("outer");
 	var inner = document.getElementById("inner");
-	document.addEventListener("click",function(e){
-		alert("document capture");
-		e.preventDefault();
-		e.stopPropagation();
-	},true);
-	document.body.addEventListener("click",function(){
-		alert("body capture");
 
-	},true);
-	outer.addEventListener("click",function(){
-		alert("outer ");
-	},outer)	
-	inner.addEventListener("click",function(){
-		alert("inner ");
-	},true)
+	addEvent(outer,"click",function(){alert("outer");});
 
 	// out.onclick=function(e){
 	// 	alert("outer");
@@ -57,6 +53,28 @@
 
 	// .addEventListener("click",function(){alert("outer");},false);
 	// document.querySelector
+	// 
+	// 
+	// 
+
+
+	// document.addEventListener("click",function(e){
+	// 	alert("document capture");
+	// 	e.preventDefault();
+	// 	e.stopPropagation();
+	// },true);
+	// document.body.addEventListener("click",function(){
+	// 	alert("body capture");
+
+	// },true);
+	// outer.addEventListener("click",function(){
+	// 	alert("outer ");
+	// },outer)	
+	// inner.addEventListener("click",function(){
+	// 	alert("inner ");
+	// },true)
+
+
 </script>
 </body>
 </html>
