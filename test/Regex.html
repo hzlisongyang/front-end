@@ -1,0 +1,23 @@
+<script type="text/javascript">
+//ip 的排序            
+var ipArray = ['10.100.0.0','0.50.0.0','10.4.120.50','-10.4.120.99','10.4.120.101'];
+// filter fun(indexValue,value)
+
+	ipArray.filter(function(v,i){
+		try{
+			v.split('.').filter(function(x,j){
+				if(parseInt(x,10) > 255 || parseInt(x,10) < 0){
+					throw {name:"ipError"};
+				}
+			});
+			console.log(i);
+		}catch(e){
+			console.log(e);
+			return false;
+		}
+	});
+		// var temp = x.replace(/(\d{1,3})/g,"00$1");
+		// var result =temp.replace(/[0]*(\d{3})/g,"$1");
+		// return result;
+console.log(ipArray);
+</script>

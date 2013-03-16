@@ -1,0 +1,21 @@
+<!doctype html>
+<html>
+<head>
+
+<script defer="defer" async type="text/javascript">
+
+	document.write("<script type='text/javascript' src='' ></script\>");
+
+	var head = document.querySelector("head");
+	var str ="alert('11');";
+	var nodeText = document.createTextNode(str);
+	var script = document.createElement("script");
+	script.appendChild(nodeText);
+	head.appendChild(script);
+
+</script>
+</head>
+<body>
+
+</body>
+</html>
