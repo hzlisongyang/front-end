@@ -1,0 +1,32 @@
+<script type="text/javascript">
+/**
+ * 1 在函数表达式中函数的命名只对函数内部可见
+ * 2 
+ * 
+ */
+var f = function g() {
+		   return 42;
+		};
+
+try{
+	var a =  typeof g();
+}catch(e){
+	var a = '未定义';
+}
+
+
+// 返回 1  
+var b = (function(f){
+   return  f(); 
+})(function(){ return 1; });
+ 
+// quiz-3：typeof f的值？
+var f = (function f() {
+    return '1';
+}, function g() {
+    return 2;
+})();
+typeof f;
+
+console.log(a,b);
+</script>
