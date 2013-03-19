@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<head>
+</head>
+<body>
+<script type="text/javascript">
+	// var s=document.createElement('script');
+	// s.setAttribute("src","hello.js");
+	// document.body.insertBefore(s,document.body.lastChild);
+	var h2 = document.createElement("h2");
+	var nodeText = document.createTextNode(new Date().toLocaleTimeString());
+	h2.appendChild(nodeText);
+	document.body.appendChild(h2);
+
+	!function foo(){
+		var callee =arguments.callee;
+		setTimeout(function(){
+			h2.innerText=new Date().toLocaleTimeString();
+			callee();
+		},1000);		
+	}()
+
+	h2.addEventListener("selectstart",function(e){
+		e.preventDefault();
+	},false);
+
+
+	var h =function(){
+		alert('h');
+	}
+	var i = function(){
+		alert('i');
+	}
+	var foo = function(h,i){
+		h();
+		setTimeout(i,1000);
+	}
+	foo();
+</script>
+</body>
+</html>
