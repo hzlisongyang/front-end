@@ -42,17 +42,4 @@
 	b();
 //2
 	window.eval.call(Array,"console.log(this)");
-
-
-	var xmlhttp =new XMLHttpRequest();
-	
-	// var json  = Json.parse("");
-	xmlhttp.onreadystatechange=function(){
-		if(xmlhttp.readyState == 4 && xmlhttp.status ==200){
-			var a =JSON.parse(responseText);
-			console.log(a);
-		}		
-	}
-	xmlhttp.open("get","http://hzpanquanyi/xone/info/getinfoList.json",true);
-	xmlhttp.send();
 </script>

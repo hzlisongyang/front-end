@@ -4,24 +4,27 @@
 <title>preventDefault example</title>
  
 <script>
-function stopDefAction(evt) {
-    evt.preventDefault();
-}
-     
-document.getElementById('my-checkbox').addEventListener(
-    'click', stopDefAction, false
-);
+
 </script>
 </head>
  
 <body>
- 
+
 <p>Please click on the checkbox control.</p>
- 
+<button id="contextmenu" onclick="contentmenu()">禁掉右键</button> 
 <form>
     <input type="checkbox" id="my-checkbox" />
     <label for="my-checkbox">Checkbox</label>
 </form>
- 
+<script type="text/javascript">
+	function contentmenu(){
+		var html = document.documentElement;
+		html.oncontextmenu=function(e){
+			e.preventDefault();
+		}		
+	}
+
+
+</script>
 </body>
 </html>
