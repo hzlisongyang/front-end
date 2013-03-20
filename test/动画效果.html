@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+
+</head>
+<body>
+	<h2>左右动画</h2>
+	<div id="demo1" style="width:100px;height:100px;background:red;margin-left:100px;"></div>
+	<script type="text/javascript">
+		var demo1 = document.getElementById("demo1");
+		function shake(e,oncomplete,distance,time){
+			distance = distance || 5 ;
+			time = time || 500;	
+			var timeStart = Date.now();
+			var originCss = e.style.cssText;
+			e.style.position="relative";
+			!function animate(){
+				var timeNow = Date.now();
+				var elapsed = timeNow - timeStart;
+				var fraction = elapsed/time;
+				e.style.left=distance*Math.sin(fraction*4*Math.PI)+"px";
+				if(fraction>1){
+					//oncomplete();				
+				}else{
+					setTimeout(animate,100);
+					count--;
+					flag=-flag;
+				}		
+			}()
+		}
+		shake(demo1);
+
+	</script>
+</body>
+</html>

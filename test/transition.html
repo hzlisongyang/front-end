@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style> 
+div{width:100px;height:100px;background:rgba(227,238,251,1);float:left;margin: 10px;border: 2px solid black;border-radius:5px;font-family: 微软雅黑;word-break:break-all;padding: 0 5px;padding: 10px;}
+.transition-height{-webkit-transition:height 0.5s ;}
+.transition-height:hover{height:200px;}
+.transition-width{-webkit-transition:width 1s;}
+.transition-width:hover{width:200px;}
+.background{-webkit-transition:all 10s;outline: 1px dashed #dc3522;}
+.background:hover{background-color: blue;color:white;outline: 5px dashed #dc3522;font-weight: bolder;text-shadow: 2px 2px #ff0000; }
+.linear{-webkit-transition:all 1s linear;}
+.linear:hover{height: 200px;}
+
+</style>
+</head>
+<body>
+<div class="transition-height">transition:height 1s</div>
+<div class="transition-width">transition:width 1s</div>
+<div class="transition-all" style="-webkit-transition:all 1s;">height+width  all 1s</div>
+<div class="background">outline weight text-shadow</div>
+
+<div class="linear"></div>
+
+<script type="text/javascript">
+	var all = document.querySelector(".transition-all");
+	console.log(all,all.style.webkitTransitionProperty,all.style.webkitTransitionDuration,all.style.webkitTransition);
+	all.style.webkitTransition="all 1s";
+	all.style.webkitTransitionDelay="2s";
+		all.style.width="200px";
+		all.style.height="200px";
+</script>
+</body>
+</html>
+
