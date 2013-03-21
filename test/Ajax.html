@@ -1,10 +1,9 @@
 <script type="text/javascript">
-	var xmlhttp =new XMLHttpRequest();
-	xmlhttp.onreadystatechange=function(){
-		if(){
-			var result = (xmlhttp.responseText);
-		}
+	var xhr = new XMLHttpRequest();
+	xhr.onreadystatechange=function(){
+		console.log(xhr);
 	}
-	xmlhttp.open("get",url,true);
-	xmlhttp.send();
+	xhr.open("get","http://www.baidu.com");
+	// xhr.sendRequestHeader();
+	xhr.send();
 </script>
