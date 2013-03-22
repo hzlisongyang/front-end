@@ -144,7 +144,6 @@ jQuery.fn = jQuery.prototype = {
 				// HANDLE: $(html) -> $(array)
 				if ( match[1] ) {
 					context = context instanceof jQuery ? context[0] : context;
-
 					// scripts is true for back-compat
 					jQuery.merge( this, jQuery.parseHTML(
 						match[1],
@@ -154,6 +153,7 @@ jQuery.fn = jQuery.prototype = {
 
 					// HANDLE: $(html, props)
 					if ( rsingleTag.test( match[1] ) && jQuery.isPlainObject( context ) ) {
+
 						for ( match in context ) {
 							// Properties of context are called as methods if possible
 							if ( jQuery.isFunction( this[ match ] ) ) {
