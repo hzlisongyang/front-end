@@ -971,8 +971,10 @@ rootjQuery = jQuery(document);
 var optionsCache = {};
 
 // Convert String-formatted options into Object-formatted ones and store in cache
+// 存到cache当中
 function createOptions( options ) {
 	var object = optionsCache[ options ] = {};
+	//把字符串转到数组-> 存到 object{once:true,memory:flase}
 	jQuery.each( options.match( core_rnotwhite ) || [], function( _, flag ) {
 		object[ flag ] = true;
 	});
@@ -1040,6 +1042,7 @@ jQuery.Callbacks = function( options ) {
 				}
 			}
 			firing = false;
+			console.log(list);
 			if ( list ) {
 				if ( stack ) {
 					if ( stack.length ) {
