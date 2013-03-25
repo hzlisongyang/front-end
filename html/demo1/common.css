@@ -90,23 +90,35 @@ body{background: url(images/body_bg.png) repeat-x;}
 		  .product_list ul {width: 734px;padding-top: 10px;}
 		  .product_list li{float:left;width: 183px;margin-bottom: 30px;}
 		  .product_list > h2{clear:both;font-size: 18px;color: #666;line-height: 30px;padding-top:21px;}
-		  .product_list div {margin-bottom: 6px;}
+		  .product_list .pic {margin-bottom: 6px;}
 		  .product_list li div a {border:1px solid #c6c6c6;display: block;width:154px;height: 114px;}
 		  .product_list a {color: #666;text-decoration:none;}
 		  .product_list h3 {font-size: 15px;}
 		  .product_list p{font-size:13px;color:#333;}
 		  .product_list p span{color: #b20e00;}
 
-.page {text-align:center;}
+.page {text-align:center;border-bottom:1px solid #ccc;padding-bottom: 5px;margin-bottom: 15px; }
 .page a {color:#B20E00;display:inline-block;height: 20px;font-size: 12px;line-height:20px;padding:0 10px;}
 .page  span{font-family:宋体;}
 .page a:hover ,.page a:active {background:#e7b2ad;}
 .page .active,.page .active:hover { background:#b20e00; color:#fff; }
 
+.scroll {}
+.scroll h2{font-size: 18px;color:#666;line-height: 30px;}
+.scroll .wrap{height:198px;background:url(images/scroll_bg.png) repeat-x 0 -396px;}
+		.wrap_left{height:198px;background: url(images/scroll_bg.png) no-repeat left -198px;}
+		.wrap_right{height:198px;background: url(images/scroll_bg.png) no-repeat right 0px;position: relative;}
+		.prev {width: 35px;height:42px;position: absolute;top: 72px;background:url(images/ie6/prev_bg.png);}
+		.next {width: 35px;height:42px;position: absolute;top: 72px;right:0;background:url(images/ico.png) no-repeat -35px -400px;}
+			.pic_wrap {position: relative;top: 31px;left:69px;overflow: hidden;width: 600px;}
+			.pic_wrap ul{height:160px;overflow-y:hidden; }
+			.pic_wrap li{float:left;width: 200px;height:160px;}
+			.pic_wrap li .pic{width: 147px;margin: 0 12px;}
+						 .pic a:hover{border:1px solid #ccc;}
+			.pic_wrap p{font-size: 12px;color: #600;width: 200px;}
 
 
-
-#footer { height:302px;margin:0 auto;background:url(images/footer_bg.png) repeat-x; }
+#footer { height:302px;margin:0 auto;background:url(images/footer_bg.png) repeat-x;position:relative;}
 	#footer_info  {position:relative;height: 62px;width: 940px;margin:0 auto;color:#cbcbcb;font-size: 14px;font-weight:bold;}
 	#footer_info .ico1{line-height: 60px;height: 62px;float:left;padding-left: 60px;padding-right: 25px;background: url(images/ico.png) no-repeat 0 -443px;}
 	#footer_info .ico2{line-height: 60px;height: 62px;float:left;padding-left: 50px;padding-right: 32px;background: url(images/ico.png) no-repeat 0 -503px;}
