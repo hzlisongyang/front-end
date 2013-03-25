@@ -12,17 +12,23 @@
 简而言之就是任何元素都可以浮动包括行内元素(行内的宽度被默认为内容宽度),从流布局中抽离以上一级块或者行块元素为参照在同一级行块元素的下方。后面的元素会跟随好像浮动的元素不在一样。
  -->
 <html>
-
+<head>
+	<style type="text/css">
+		div,body,html{margin: 0;padding:0;}
+		.container {background:#ccc;height:600px;width:600px;}
+		.float {float:left;background:#eee;height:500px;width:400px;margin:50px;}
+	</style>
+</head>
 <body>
-<div style="background:#ccc;height:600px;width:600px">
-	<div style="background:#eee;height:500px;width:400px;margin:50px;">
-			<div style="background:red;height:100px;width:100px;float:left;margin: 20px;">
+<div class="container">
+	<div class="float">
+			<div style="background:red;height:100px;width:100px;float:left;">
 			</div>
-			<span>fffffffffffff</span>
-			<img width="100" height="200" align="left" style="" src="">
-			<span>ggggggggggggg</span>
-			<div style="background:black;height:100px;width:100px;margin: 20px;">
-			</div>		
+			<span style="font-size: 30px;background:blue;padding:0 10px;">行内元素span</span>
+<!-- 			<img width="100" height="200" align="left" alt="行块元素" style="" src="">
+ -->
+<!-- 			<div style="background:black;height:100px;width:100px;margin: 20px;">
+			</div>		 -->
 	</div>
 </div>
 </body>
