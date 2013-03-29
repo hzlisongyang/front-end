@@ -1,9 +1,11 @@
 <script type="text/javascript">
 	var xhr = new XMLHttpRequest();
+	var url = "http://paiege.duapp.com/test.php";
 	xhr.onreadystatechange=function(){
-		console.log(xhr);
+		if(xhr.readyState ==4 && xhr.status ==200){
+			console.log(xhr.responseText);
+		}
 	}
-	xhr.open("get","http://www.baidu.com");
-	// xhr.sendRequestHeader();
+	xhr.open("get",url,false);
 	xhr.send();
 </script>
