@@ -1,0 +1,33 @@
+<!doctype html>
+<html>
+<head>
+	<script type="text/javascript" src="jquery-1.9.1.js"></script>
+</head>
+
+<body>
+
+<ul id="score">
+ 	<li>小王<em>70</em></li>
+	<li>小李<em>68</em></li>
+	<li>小张<em>80</em></li>
+	<li>小四<em>50</em></li>
+	<li>小五<em>40</em></li>
+	<li>小六<em>30</em></li>
+ </ul>
+
+<script type="text/javascript">
+	// console.log($("#score li"));
+	// $("#score em").each()
+	var ems = document.querySelectorAll("#score li em");
+	var arr = [];
+	for (var i = 0,len = ems.length; i < len; i++) {
+		var a = parseInt(ems[i].innerText);
+		arr.push({index:1,value:a});
+	};
+	arr.sort(function(a,b){return a.value-b.value});
+	console.log(arr);
+</script>
+
+</body>
+
+</html>
