@@ -43,10 +43,22 @@ bubbleSort(arr);
 console.log(arr,"----冒泡排序");
 
  function InsertSort(arr) { //插入排序->直接插入法排序
+  var st = new Date();
   var temp, j;
   for(var i=1; i<arr.length; i++) {
-      
+   if((arr[i]) < (arr[i-1])) {
+	    temp = arr[i];
+	    j = i-1;
+    do {
+	     arr[j+1] = arr[j];
+	     j--;
+    }
+    while (j>-1 && (temp) < (arr[j]));
+    arr[j+1] = temp;
+   }//endif
   }
  }
-
+var arr=[49,38,65,97,76,13,27,49];
+InsertSort(arr);
+console.log(arr,"----插入排序");
 </script>
