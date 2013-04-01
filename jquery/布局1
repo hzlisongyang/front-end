@@ -1,0 +1,26 @@
+<!doctype html>
+<html>
+<head>
+	<script type="text/javascript" src="jquery-1.9.1.js"></script>
+</head>
+
+<body>
+<div style="width:100px;height:100px;background:red;"></div>
+<script type="text/javascript">
+	//var deferred = $.Deferred();
+	aaaaaaaaaaaaaaaaa=1;
+	var bbbbbbbbbbbbbbbbbb=2;
+	console.log(window);
+	// $("<button>").promise({"xxxxxx":1}).done(function(){
+	// 	console.log("haha");
+	// });
+	// console.log($("<button>"));
+	// deferred.always(function(){console.log('always 1')},function(){console.log('always 2')});
+	// deferred.done(function(){console.log('done');});
+	// deferred.resolve();
+	//console.log($.Deferred().promise({"xxxxxx":1}));
+</script>
+
+</body>
+
+</html>
