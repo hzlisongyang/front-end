@@ -1,0 +1,64 @@
+<script type="text/javascript">
+/**
+ * 1 直接查找 静态查找
+ * 
+ * 2 二分查找 折半查找
+ *
+ * 3
+ */
+var arr1= [3,2,5,1,7,4,6,8,9];
+// 顺序查找 直接查找 静态查找 O(N)
+function directFind(value,arr){
+	for(var i=0;i<arr.length;i++){
+		if(value == arr[i]){
+			return i ;
+		}
+	}
+}
+// 二分查找 折半查找  速度快 但是要有序 
+var arr2= [1,2,3,4,5,6,17,28,49];
+// function binaryFind(value,arr){
+// 	var left=0,right=arr.length;
+// 	while(left<=right){ 
+// 		var center=Math.floor((left+right)/2); 
+// 		if(arr[center] == value) return center; 
+// 		if(value < arr[center]){ 
+// 			right = center - 1; 
+// 		}else{ 
+// 			left = center + 1; 
+// 		}
+// 	}
+// }
+//
+
+
+// function binaryFind(value,arr){
+// 	var left=0,right=arr.length,center;
+// 	while(left<=right){
+// 		center = Math.floor((left+right)/2);
+// 		if(value == arr[center]) return center;
+// 		if(value > arr[center]){
+// 			left = center+1;
+// 		}else{
+// 			right= center-1;
+// 		}
+// 	}
+// }
+
+
+
+function  binaryFind(value,arr){
+	var left=0,right=arr.length,mid;
+	while(left<=right){
+		mid = Math.floor((left+right)/2);
+		if(value == arr[mid]) return mid;
+		if(value > arr[mid]){
+			left=1+mid;
+		}else{
+			right=mid-1;
+		}
+	}
+}
+
+
+</script>
