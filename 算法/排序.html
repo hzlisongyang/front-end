@@ -43,19 +43,19 @@ bubbleSort(arr);
 console.log(arr,"----冒泡排序");
 
  function InsertSort(arr) { //插入排序->直接插入法排序
-    
-    for(var i=1;i<arr.length;i++){
-      loop:for(var j=i-1;j>=0;j--){
-        if(arr[j]>arr[i]){  
-          var temp = arr[i];
-          while(j<=i){
-            arr[i] = arr[--i];
-          }
-          arr[j] = temp;
-          break loop;
-        }
-      }
-    }
+    for (var i = 1; i<arr.length; i++) {
+      for (var j=i-1; j >= 0; j--) {
+         if(arr[i] < arr[j]){
+           var temp = arr[i];
+           while(i>=j){
+              arr[i] = arr[--i];
+           }
+           arr[j]=temp;
+           break;
+         }
+      };
+    };
+
  }
 var arr=[49,38,65,97,76,13,27,49];
 InsertSort(arr);
