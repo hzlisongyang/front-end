@@ -8,34 +8,27 @@
 var arr=[49,38,65,97,76,13,27,49];
 console.log(arr,"-----原始");
 function selectSort(arr){
-  for (var i = 0; i < arr.length; i++) {
-      var min=arr[i],index = i;
-      for (var j = i+1; j < arr.length; j++) {
-          if(min>arr[j]){
-            min = arr[j];
-            index = j;
-          }
-      }
+    for(var i=0,index=i,len=arr.length;i<len;i++,index=i){
+      for(var j=i+1;j<len;j++)index = arr[index]>arr[j]?j:index;
       var temp = arr[i];
-      arr[index] =arr[i];
-      arr[i] = min;
-
-  }
+      arr[i] = arr[index];
+      arr[index] = temp;
+    }
 }
 
 selectSort(arr);
 console.log(arr,"---选择排序");
 
 var bubbleSort = function(arr){
-    for (var i = arr.length - 1; i >= 0; i--) {
-      for (var j =arr.length - 2; j >= 0; j--) {
-        if (arr[j]>arr[j+1]) {
-           var temp = arr[j];
-           arr[j] = arr[j+1];
-           arr[j+1] = temp;
+    for (var i = arr.length - 2; i >= 0; i--) {
+      for (var j= i; j < arr.length; j++) {
+        if(arr[j]>arr[j+1]){http://ww2.sinaimg.cn/bmiddle/4e5b54d8jw1e3b209ozyxj.jpg
+          var temp = arr[j];
+          arr[j] = arr[j+1];
+          arr[j+1] = temp;
         }
-      };
-    };
+      }
+    }
 }
 
 var arr=[49,38,65,97,76,13,27,49];
@@ -43,19 +36,18 @@ bubbleSort(arr);
 console.log(arr,"----冒泡排序");
 
  function InsertSort(arr) { //插入排序->直接插入法排序
-    for (var i = 1; i<arr.length; i++) {
-      for (var j=i-1; j >= 0; j--) {
-         if(arr[i] < arr[j]){
-           var temp = arr[i];
-           while(i>=j){
+    for (var i =1; i<arr.length; i++) {
+      for (var j = i-1; j >= 0; j--) { 
+          if(arr[j]>arr[i]){//重要
+            var temp = arr[i];
+            while(j<i){
               arr[i] = arr[--i];
-           }
-           arr[j]=temp;
-           break;
-         }
-      };
-    };
-
+            }
+            arr[j] = temp;
+            continue;
+          }
+      }
+    }
  }
 var arr=[49,38,65,97,76,13,27,49];
 InsertSort(arr);
