@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style> 
+p.test1
+{
+width:11em; 
+border:1px solid #000000;
+word-break:hyphenate;
+}
+
+p.test2
+{
+width:11em; 
+border:1px solid #000000;
+word-break:break-all;
+}
+</style>
+</head>
+<body>
+
+<p class="test1"> This paragraph contains some text. This line will-break-at-hyphenates.</p>
+<p class="test2"> This paragraph contains some text: The lines will break at any character.</p>
+
+<p><b>Note:</b> The word-break property does not work in Opera.</p>
+<!-- 这就会造成这么两情况：
+
+假如一个 p 有 100px 宽，而其中有很长一段无空格的英文字符，完全超过 100px 了，此时二者表现相同，都是在边界处将字符截断。
+假如一个 p 有 100px 宽，其中有段文字既有中文也有英文，前面是中文，占了 70px，后面一个很长的英文单词有 50px。对于 word-wrap:break-word 会将该单词全部折到下一行输出，而 word-break:break-all 会利用剩下的 30px 输出单词的前半部分，再到下一行输出剩下的 20px。
+支持情况
+
+word-wrap:break-word 受众多浏览器支持；
+word-break:break-all 受较少浏览器支持。 -->
+</body>
+</html>
