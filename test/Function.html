@@ -26,13 +26,13 @@
 	}
 	fun(1,2,4);
 
-//当为构造函数的时return 非对象的  会忽略return
+//当为构造函数的时return 非对象的  会忽略return   jQuery
 	function A(){
 		this.age=1;
 		return 1;
 	}
 	var a =new A();
 	console.log(a);
-	new Function("var nestA=2;console.log(nestA);");
-	console.log(nestA);
+	new Function("var nestA=2;nestB=3; console.log(nestA);console.log(nestB);");
+	console.log(nestA,"局部变量无法获取",nestB,"局部变量无法获取");
 </script>

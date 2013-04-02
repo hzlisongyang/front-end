@@ -13,9 +13,12 @@
 	function test1(){
 		var str1 ="var a = 2;console.log(this);(function(){var value11 =9;})()";
 		eval(str1);
+		window.eval("a = 3;");
+		console.log(a,"window.eval 无法改变");
 
 		var str2 ="var b = 3;";
 		window.eval(str2);
+		console.log(b,"window.eval调用创建的值 函数内部能够获取");
 
 		var str3 ="var c =4 ;";
 		eval.call(window,str3);// window 对象调用
@@ -30,7 +33,7 @@
 		tempEval(str5);
 	}
 	test1();
-	console.log(typeof a);//undefined
+	console.log(typeof a);//undefined  
 	console.log(typeof b,b);//3
 	console.log(typeof c,c);//4
 	console.log(typeof e,e,"-e");
@@ -40,6 +43,7 @@
 	//eval 可以计算表达式 和执行语句
 	eval("function b(){console.log('李');}");
 	b();
+
 //2
 	window.eval.call(Array,"console.log(this)");
 </script>

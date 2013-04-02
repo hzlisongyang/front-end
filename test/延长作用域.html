@@ -1,7 +1,11 @@
 <script type="text/javascript">
 
-	with(location){
-		url = "http://www.baidu.com";
-	}
-	console.log(url);
+	(function(){
+		try{
+			var a = 1;
+		}catch(e){
+			console.log(a);
+		}
+	})();
+
 </script>
